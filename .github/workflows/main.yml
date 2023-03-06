@@ -5,7 +5,7 @@ on:
       - devel
 jobs:
   deploy: ⌛ job start 
-    name: 🎉 
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
