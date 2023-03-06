@@ -10,13 +10,14 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-      - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
+      - name: Sync to Server
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          host: ${{ secrets.FTP_ADDRESS }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: 185.229.113.53
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "./test/"
+          local-dir: ./test/
+          server-dir: /public_html/
           # remoteDir: "./"
             # options: "--delete --asci"
           # server: ${{ secrets.FTP_ADDRESS }}
