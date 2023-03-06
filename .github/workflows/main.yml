@@ -1,0 +1,29 @@
+name: Build app and deploy to aliyun
+on:
+  push:
+    branches:
+      - devel
+jobs:
+  build-deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: use Node.js 16.13.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.13.1
+      - name: npm  install
+        run: npm install
+      - name: npm run build-static
+        run: npm run build-static
+      - name: Deploy Sync FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_ADDRESS }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: './out/'
+          server-dir: ${{ secrets.FTP_REMOTE_FOLDER }}
+        # src_account_type: org
+        # dst_account_type: org
