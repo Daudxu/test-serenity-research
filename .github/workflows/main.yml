@@ -18,7 +18,7 @@ jobs:
             password: ${{ secrets.FTP_PASSWORD }}
             localDir: "test"
             remoteDir: "/domains/test.serenity-research.com/public_html/"
-            options: "--delete --asci"
+            # options: "--delete --asci"
           # server: ${{ secrets.FTP_ADDRESS }}
           # username: ${{ secrets.FTP_USERNAME }}
           # password: ${{ secrets.FTP_PASSWORD }}
