@@ -10,15 +10,15 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: 185.229.113.53
-          username: u315975763
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./test/
-          server-dir: ./home/u315975763/domains/test.serenity-research.com/public_html/
+      - name: Upload ftp
+          uses: sebastianpopp/ftp-action@releases/v2
+          with:
+            host: ${{ secrets.FTP_ADDRESS }}
+            user: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            localDir: "test"
+            remoteDir: "/domains/test.serenity-research.com/public_html/"
+            options: "--delete --asci"
           # server: ${{ secrets.FTP_ADDRESS }}
           # username: ${{ secrets.FTP_USERNAME }}
           # password: ${{ secrets.FTP_PASSWORD }}
