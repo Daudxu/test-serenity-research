@@ -22,7 +22,7 @@ jobs:
         with:
           server: '185.229.113.53'
           username: 'u315975763'
-          password: ${{ secrets.password }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: './test/'
           server-dir: 'domains/test.serenity-research.com/public_html/'
           # server: ${{ secrets.FTP_ADDRESS }}
