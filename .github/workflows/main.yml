@@ -18,13 +18,13 @@ jobs:
       - name: npm run build-static
         run: npm run build-static
       - name: 📂 Sync files
-            uses: SamKirkland/FTP-Deploy-Action@4.3.3
-            with:
-              server: ${{ secrets.FTP_ADDRESS }}
-              username: ${{ secrets.FTP_USERNAME }}
-              password: ${{ secrets.FTP_PASSWORD }}
-              local-dir: './out/'
-              server-dir: ${{ secrets.FTP_REMOTE_FOLDER }}
+          uses: SamKirkland/FTP-Deploy-Action@4.3.3
+          with:
+            server: ${{ secrets.FTP_ADDRESS }}
+            username: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            local-dir: './out/'
+            server-dir: ${{ secrets.FTP_REMOTE_FOLDER }}
           # server: ${{ secrets.FTP_ADDRESS }}
           # username: ${{ secrets.FTP_USERNAME }}
           # password: ${{ secrets.FTP_PASSWORD }}
