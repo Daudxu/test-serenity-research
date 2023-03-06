@@ -27,13 +27,13 @@ jobs:
         dangerous-clean-slate: true
         local-dir: ./out/
         log-level: verbose
-    - name: 📂 Sync Deploy files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ${{ secrets.FTP_NAME }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PWD }}
-        dangerous-clean-slate: true
-        local-dir: ./out/
-        log-level: verbose
+    # - name: 📂 Sync Deploy files
+    #   uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    #   with:
+    #     server: ${{ secrets.FTP_NAME }}
+    #     username: ${{ secrets.FTP_USERNAME }}
+    #     password: ${{ secrets.FTP_PWD }}
+    #     dangerous-clean-slate: true
+    #     local-dir: ./out/
+    #     log-level: verbose
      
