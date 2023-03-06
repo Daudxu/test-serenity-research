@@ -1,11 +1,11 @@
-name: Build app and deploy
+
+name: Build app and deploy 
 on:
   push:
     branches:
       - devel
 jobs:
-  deploy: ⌛ job start 
-    name: 🎉 Deploy
+  build-deploy-job:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
