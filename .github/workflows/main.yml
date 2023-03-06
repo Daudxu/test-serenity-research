@@ -24,6 +24,7 @@ jobs:
         server: ${{ secrets.FTP_ADDRESS }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        dangerous-clean-slate: true
         local-dir: ./out/
         log-level: verbose
     - name: 📂 Sync Deploy files
@@ -32,6 +33,7 @@ jobs:
         server: ${{ secrets.FTP_NAME }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PWD }}
+        dangerous-clean-slate: true
         local-dir: ./out/
         log-level: verbose
      
