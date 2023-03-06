@@ -5,16 +5,17 @@ on:
       - devel
 jobs:
   deploy:
-    name: 🚀 Deploy website every commit
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
-      - name: Sync to Server
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: test.serenity-research.com
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./test/
-          server-dir: /public_html/
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        timeout : 100000000
+        server: ${{ secrets.FTP_ADDRESS }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./test/
+        server-dir: /public_html/
