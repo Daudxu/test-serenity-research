@@ -11,13 +11,13 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
       - name: Upload ftp
-          uses: sebastianpopp/ftp-action@releases/v2
-          with:
-            host: ${{ secrets.FTP_ADDRESS }}
-            user: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            localDir: "test"
-            remoteDir: "/domains/test.serenity-research.com/public_html/"
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_ADDRESS }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "test"
+          remoteDir: "/domains/test.serenity-research.com/public_html/"
             # options: "--delete --asci"
           # server: ${{ secrets.FTP_ADDRESS }}
           # username: ${{ secrets.FTP_USERNAME }}
