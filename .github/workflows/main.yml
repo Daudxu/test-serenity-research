@@ -13,7 +13,7 @@ jobs:
     - name: 🚜 use Node.js 16.13.1
       uses: actions/setup-node@v1
       with:
-      node-version: 16.13.1
+        node-version: 16.13.1
     - name: 🌈 npm  install
       run: npm install
     - name: 🌏 npm run build-static
