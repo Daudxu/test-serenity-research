@@ -14,9 +14,10 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
         timeout : 100000000
+        log-level: verbose
         server: ${{ secrets.FTP_ADDRESS }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./test/
-        server-dir: /public_html/
-        log-level: verbose
+        # local-dir: ./test/
+        # server-dir: /public_html/
+     
