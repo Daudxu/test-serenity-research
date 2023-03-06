@@ -24,4 +24,5 @@ const migrate = [
     },
   },
 ];
+
 export default migrate;
