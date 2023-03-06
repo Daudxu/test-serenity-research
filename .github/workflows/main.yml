@@ -13,10 +13,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
-      - name: npm  install
-        run: npm install
-      - name: npm run build-static
-        run: npm run build-static
+      # - name: npm  install
+      #   run: npm install
+      # - name: npm run build-static
+      #   run: npm run build-static
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
