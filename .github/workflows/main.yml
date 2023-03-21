@@ -3,7 +3,7 @@ name: Build app and deploy
 on:
   push:
     branches:
-      - devel
+      - master
 jobs:
   build-deploy-job:
     runs-on: ubuntu-latest
